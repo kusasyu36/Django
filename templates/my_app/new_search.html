@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h2 style="text-align: center">{{ search | title}}</h2>
+
+
+<!--
+{% for post in final_postings %}
+    <p>{{ post.0 }}</p>
+    <p>{{ post.1 }}</p>
+    <p>{{ post.2 }}</p>
+{% endfor %}
+-->
+
+<div class="row">
+
+{% for post in final_postings %}
+    <div class="col s4">
+        <div class="card">
+            <div class="card-image">
+                <a href="{{ post.1 }}"><img src="{{ post.3 }}" alt=""></a>
+            </div>
+            <div class="card-content">
+                <p>{{ post.0}}</p>
+            </div>
+            <div class="card-action">
+                <a href="{{ post.1 }}">View listing: Price {{ post.2}}</a>
+                    </div>
+                </div>
+            </div>
+{% endfor %}
+</div>
+
+
+
+
+
+
+<!--
+カードフォーマットを加えていく。
+https://materializecss.com/cards.html
+-->
+<!--
+<div class="row">
+            <div class="col s4">
+                <div class="card">
+                    <div class="card-image">
+                        
+                        <a href="/"><img src="https://i.pinimg.com/originals/73/f5/ac/73f5ace6416be75b0d814af25bb703f1.jpg" alt=""></a>
+                    </div>
+                    <div class="card-content">
+                        <p>test</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="/">View listing: Price TEST PRICE</a>
+                    </div>
+                </div>
+            </div>
+
+    
+<div class="col s4">
+                <div class="card">
+                    <div class="card-image">
+                        <a href="/"><img src="https://i.pinimg.com/originals/73/f5/ac/73f5ace6416be75b0d814af25bb703f1.jpg" alt=""></a>
+                    </div>
+                    <div class="card-content">
+                        <p>test</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="/">View listing: Price TEST PRICE</a>
+                    </div>
+                </div>
+            </div>
+
+    
+    <div class="col s4">
+                <div class="card">
+                    <div class="card-image">
+                        <a href="/"><img src="https://i.pinimg.com/originals/73/f5/ac/73f5ace6416be75b0d814af25bb703f1.jpg" alt=""></a>
+                    </div>
+                    <div class="card-content">
+                        <p>test</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="/">View listing: Price TEST PRICE</a>
+                    </div>
+                </div>
+            </div>
+
+</div>
+-->
+{% endblock content %}
+
+<!--さらに、titlも加えると見え方変わるよ-->
+<!--ダブルで二戸で囲むよいのだ。で囲むと、入力したものが出てくる。-->
+
+
+<!--
+
+以下もすべてbase.htmlに含める
+<form action="{% url 'new_search' %}" method="post">
+{% csrf_token %}
+
+    <input type="text" name="search" placeholder="search">
+ボタン汚いので選びなおす
+    以下より
+    https://materializecss.com/buttons.html
+     <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+    <i class="material-icons right">send</i>
+  </button>
+    <input type="submit" name="submit">
+</form>
+<h1>base.htmlの(% block content %)
+
+(% endblock content %)
+
+の間に配置されえるよ
+    </h1>
+-->
+
